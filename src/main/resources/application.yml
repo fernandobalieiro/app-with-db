@@ -4,7 +4,8 @@ quarkus:
     devservices:
       volumes:
         "/tmp/test/data": /var/lib/postgresql/data
-        "classpath:init.sql": /docker-entrypoint-initdb.d/init.sql
   hibernate-orm:
     database:
       generation: none
+  flyway:
+    migrate-at-start: true
